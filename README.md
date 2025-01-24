@@ -20,3 +20,9 @@ indent_size = 4
 
 let's see if i remember to update it as time goes on!
 
+---
+
+### TODO
+
+- I can probably just sync `~/.editorconfig` in `init.lua`
+
