@@ -17,6 +17,7 @@ return {
       require("lspconfig").basedpyright.setup {}
       require("lspconfig").gopls.setup {}
       require("lspconfig").clangd.setup {}
+      require("lspconfig").bashls.setup {}
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
