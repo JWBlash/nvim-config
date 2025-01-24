@@ -23,6 +23,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.diagnostic.config({
+  virtual_text = true
+})
+
 -- the following code displays virtual text hints for only the hovered line
 --
 -- vim.diagnostic.config( {
