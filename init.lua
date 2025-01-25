@@ -63,20 +63,22 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
   }
 )
 
-local check_sync = function()
-  os.execute("git fetch")
-  local handle = io.popen("git rev-list HEAD..origin/main --count")
-  if handle then
-    local result = handle:read("*a"):gsub("%s$", "")
-    handle:close()
-    if tonumber(result) > 0 then
-      print("WARN:")
-      print("   You are behind by " .. result .. " commits!")
-      print("   Consider running a `git pull`.")
-    end
-  else
-    print("ERR: Failed to check upstream status. Are you in a git repo?")
-  end
-end
-
-check_sync()
+-- this won't work because it checks the current dir,
+-- not the dir that has our config. I'll need to fix that
+-- local check_sync = function()
+--   os.execute("git fetch")
+--   local handle = io.popen("git rev-list HEAD..origin/main --count")
+--   if handle then
+--     local result = handle:read("*a"):gsub("%s$", "")
+--     handle:close()
+--     if tonumber(result) > 0 then
+--       print("WARN:")
+--       print("   Your nvim-config is behind by " .. result .. " commits!")
+--       print("   Consider running a `git pull`.")
+--     end
+--   else
+--     print("ERR: Failed to check upstream status. Are you in a git repo?")
+--   end
+-- end
+--
+-- check_sync()
