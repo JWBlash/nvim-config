@@ -25,4 +25,5 @@ let's see if i remember to update it as time goes on!
 ### TODO
 
 - I can probably just sync `~/.editorconfig` in `init.lua`
+- Since I use this with git, I can probably also fetch on start and warn if behind main
 
