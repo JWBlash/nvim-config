@@ -8,7 +8,14 @@ return {
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
     },
     config = function()
-      print("telescope")
+      require('telescope').setup {
+        extensions = {
+          fzf = {}
+        }
+      }
+
+      require('telescope').load_extension('fzf')
+
       vim.keymap.set("n", "<space>fd", require('telescope.builtin').find_files)
       vim.keymap.set("n", "<space>fq", require('telescope.builtin').lsp_references)
       vim.keymap.set("n", "<space>nv", function()
