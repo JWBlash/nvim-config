@@ -9,6 +9,11 @@ return {
     },
     config = function()
       require('telescope').setup {
+        pickers = {
+          lsp_references = {
+            theme = "dropdown"
+          },
+        },
         extensions = {
           fzf = {}
         }
