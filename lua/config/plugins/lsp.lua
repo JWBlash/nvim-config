@@ -18,6 +18,7 @@ return {
       require("lspconfig").gopls.setup {}
       require("lspconfig").clangd.setup {}
       require("lspconfig").bashls.setup {}
+      require("lspconfig").zls.setup {}
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
