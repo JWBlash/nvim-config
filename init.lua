@@ -2,7 +2,8 @@ require("config.lazy")
 local os_config = require("config.os")
 
 if vim.fn.has("win32") == 1 then
-  os_config.setup_windows_compiler()
+  -- this didn't even work for me so don't bother doing it right now
+  -- os_config.setup_windows_compiler()
 end
 
 local set = vim.opt
