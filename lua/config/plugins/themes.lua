@@ -1,15 +1,34 @@
 return {
   {
-    "ellisonleao/gruvbox.nvim",
+    "neanias/everforest-nvim",
     config = function()
-      require("gruvbox").setup({
-        italic = {
-          strings = false
-        },
-        dim_inactive = false,
-        transparent_mode = false,
-      })
-      vim.cmd.colorscheme "gruvbox"
+      vim.cmd.colorscheme "everforest"
     end
   },
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   config = function()
+  --     require("kanagawa").setup({
+  --       colors = {
+  --         palette = {},
+  --         theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+  --       },
+  --       theme = "lotus",
+  --     })
+  --     vim.cmd.colorscheme "kanagawa"
+  --   end
+  -- },
+  -- {
+  --   "ellisonleao/gruvbox.nvim",
+  --   config = function()
+  --     require("gruvbox").setup({
+  --       italic = {
+  --         strings = false
+  --       },
+  --       dim_inactive = false,
+  --       transparent_mode = false,
+  --     })
+  --     vim.cmd.colorscheme "gruvbox"
+  --   end
+  -- },
 }
