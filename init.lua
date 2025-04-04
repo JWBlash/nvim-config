@@ -1,17 +1,20 @@
 require("config.lazy")
 local os_config = require("config.os")
 
+-- compile on windows if we haven't yet already
 if vim.fn.has("win32") == 1 then
   -- this didn't even work for me so don't bother doing it right now
   -- os_config.setup_windows_compiler()
 end
 
+-- general settings
 local set = vim.opt
 set.shiftwidth = 4
 set.number = true
 set.relativenumber = true
 -- set.wildmode = "longest:full" <-- bash-like autocomplete for wildmenu
 
+-- general binds
 local binds = vim.keymap
 binds.set("n", "<space><space>x", "<cmd>source %<CR>")
 binds.set("n", "<space>x", ":.lua<CR>")
@@ -25,6 +28,7 @@ binds.set("n", "grr", vim.lsp.buf.references)
 binds.set("n", "<C-n>", "<cmd>cnext<CR>")
 binds.set("n", "<C-p>", "<cmd>cprev<CR>")
 
+-- highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
@@ -33,17 +37,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.diagnostic.config({
-  virtual_text = true
-})
-
--- the following code displays virtual text hints for only the hovered line
-
-vim.diagnostic.config({
-  virtual_text = false
-})
-
--- formatting on save
+-- diagnostics on hover
 local ns = vim.api.nvim_create_namespace('CurlineDiag')
 vim.opt.updatetime = 100
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -67,12 +61,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     })
   end
 })
-
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-  vim.lsp.handlers.hover, {
-    border = "single"
-  }
-)
 
 -- this won't work because it checks the current dir,
 -- not the dir that has our config. I'll need to fix that
