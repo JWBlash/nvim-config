@@ -21,6 +21,10 @@ binds.set("n", "grn", vim.lsp.buf.rename)
 binds.set("n", "gra", vim.lsp.buf.code_action)
 binds.set("n", "grr", vim.lsp.buf.references)
 
+-- quickfix binds
+binds.set("n", "<C-n>", "<cmd>cnext<CR>")
+binds.set("n", "<C-p>", "<cmd>cprev<CR>")
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
