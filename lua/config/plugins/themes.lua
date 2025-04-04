@@ -5,6 +5,9 @@ return {
       vim.cmd.colorscheme "everforest"
     end
   },
+  --
+  -- themes I like but don't use atm
+  --
   -- {
   --   "rebelot/kanagawa.nvim",
   --   config = function()
