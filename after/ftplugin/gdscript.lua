@@ -1,4 +1,5 @@
 local port = os.getenv('GDScript_Port') or '6005'
+-- TODO(james) ncat is a dependency... check for it
 local cmd = { 'ncat', '127.0.0.1', port }
 local pipe = [[\\.\pipe\godot.pipe]]
 
