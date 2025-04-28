@@ -45,6 +45,8 @@ return {
       require("lspconfig").clangd.setup {}
       require("lspconfig").bashls.setup {}
       require("lspconfig").zls.setup {}
+      require("lspconfig").svelte.setup {}
+      require("lspconfig").tailwindcss.setup {}
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)

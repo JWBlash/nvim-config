@@ -19,7 +19,7 @@ local binds = vim.keymap
 binds.set("n", "<space><space>x", "<cmd>source %<CR>")
 binds.set("n", "<space>x", ":.lua<CR>")
 binds.set("v", "<space>x", ":lua<CR>")
-binds.set("n", "<space>o", ":Oil --float<CR>")
+binds.set("n", "<space>o", ":Oil<CR>")
 binds.set("n", "grn", vim.lsp.buf.rename)
 binds.set("n", "gra", vim.lsp.buf.code_action)
 binds.set("n", "grr", vim.lsp.buf.references)
