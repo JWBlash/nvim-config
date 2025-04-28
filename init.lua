@@ -52,6 +52,10 @@ binds.set("n", "<space>st", function()
   vim.api.nvim_win_set_height(0, 15)
 end)
 
+vim.diagnostic.config({
+  virtual_text = false
+})
+
 -- diagnostics on hover
 local ns = vim.api.nvim_create_namespace('CurlineDiag')
 vim.opt.updatetime = 100
