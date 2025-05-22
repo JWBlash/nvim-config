@@ -16,9 +16,8 @@ return {
           palette = {},
           theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
         },
-        theme = "lotus",
       })
-      vim.cmd.colorscheme "kanagawa"
+      vim.cmd.colorscheme "kanagawa-dragon"
     end
   },
   -- {

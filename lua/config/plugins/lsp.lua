@@ -42,7 +42,13 @@ return {
       require("lspconfig").lua_ls.setup {}
       require("lspconfig").basedpyright.setup {}
       require("lspconfig").gopls.setup {}
-      require("lspconfig").clangd.setup {}
+      require("lspconfig").clangd.setup {
+        on_attach = function(client)
+          -- disable clangd formatting
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
+      }
       require("lspconfig").bashls.setup {}
       require("lspconfig").zls.setup {}
       require("lspconfig").svelte.setup {}
